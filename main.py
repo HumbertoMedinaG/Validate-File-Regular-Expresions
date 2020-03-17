@@ -12,15 +12,14 @@ def main():
     col7 = r'[^\t\n\r\f\v]+'
     col8 = r'\d'
 
-    # Expresión regular
+    # Expresion regular
     pattern = r'^{}\|{}\|{}\|{}\|{}\|{}\|{}\|{}\|$'.format(
         col1, col2, col3, col1, col5, col1, col7, col8)
-    # pattern2 = r'{}\|{}\|{}\|{}\|{}\|{}\|'.format( col1, col2, col3, col1, col5, col1)
 
     # Abrimos el archivo que contiene la cadena de entrada
     lines = OpenFile('file.txt')
 
-    # Comparamos cada linea con la expresión regular
+    # Comparamos cada linea con la expresion regular
     for line in lines:
         if (not re.match(pattern, line)):
             error = 'ERROR: Archivo invalido. Formato invalido en la linea:\n\n>> {}\nSaliendo...'.format(
